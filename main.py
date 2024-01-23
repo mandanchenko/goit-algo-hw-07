@@ -24,6 +24,7 @@ def search(root, key):
     return search(root.right, key)
 
 
+# Завдання 1 - знаходження мінімального значення в двійковому дереві пошуку
 def min_value_node(node):
     current = node
     while current.left:
@@ -31,6 +32,7 @@ def min_value_node(node):
     return current
 
 
+# Завдання 2 - знаходження максимального значення в двійковому дереві пошуку
 def max_value_node(node):
     current = node
     while current.right:
@@ -38,6 +40,7 @@ def max_value_node(node):
     return current
 
 
+# Завдання 3 - знаходження суми всіх значень в двійковому дереві пошуку
 def sum_value_node(root):
     if root is None:
         return 0
@@ -73,15 +76,15 @@ def delete(root, key):
     return root
 
 
-# Test
-root = Node(5)
-root = insert(root, 3)
-root = insert(root, 2)
-root = insert(root, 4)
-root = insert(root, 9)
-root = insert(root, 6)
-root = insert(root, 8)
+if __name__ == "__main__":
+    root = Node(7)
+    root = insert(root, 3)
+    root = insert(root, 2)
+    root = insert(root, 4)
+    root = insert(root, 9)
+    root = insert(root, 6)
+    root = insert(root, 8)
 
-print(min_value_node(root).val)
-print(max_value_node(root).val)
-print(sum_value_node(root))
+    print("Мінімальне зачення в ДДП: ", min_value_node(root).val)
+    print("Максимальне зачення в ДДП: ", max_value_node(root).val)
+    print("Сума всіх значень в ДДП: ", sum_value_node(root))
